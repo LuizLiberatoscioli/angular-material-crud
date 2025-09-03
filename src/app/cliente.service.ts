@@ -11,8 +11,12 @@ export class ClienteService {
   constructor() { }
 
     salvar(cliente: Cliente){
-      console.log(cliente);
+      const storage = this.obterStorage();
+      storage.push(cliente);
+
+      localStorage.setItem(ClienteService.REPO_CLIENTES , JSON.stringify(storage));
     }
+
 obterStorage () : Cliente[] {   
       //localStorage.getItem (vai buscar pelo valor que eu colocar no caso a variavel ClienteService.REPO_CLIENTES)
   const repositorioClientes = localStorage.getItem(ClienteService.REPO_CLIENTES);

@@ -32,6 +32,7 @@ export class CadastroComponent {
 
   salvar(){
     console.log("Dados Cliente: " , this.cliente);
+    this.service.salvar(this.cliente);
   }
 
 }
