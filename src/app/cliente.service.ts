@@ -17,7 +17,12 @@ export class ClienteService {
       localStorage.setItem(ClienteService.REPO_CLIENTES , JSON.stringify(storage));
     }
 
-obterStorage () : Cliente[] {   
+   pesquisarClientes(nome: string) : Cliente[] {
+    return this.obterStorage();
+
+   } 
+
+  private obterStorage () : Cliente[] {   
       //localStorage.getItem (vai buscar pelo valor que eu colocar no caso a variavel ClienteService.REPO_CLIENTES)
   const repositorioClientes = localStorage.getItem(ClienteService.REPO_CLIENTES);
   if (repositorioClientes){
